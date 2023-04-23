@@ -25,17 +25,17 @@ struct RideRequestView: View {
                     Circle()
                         .fill(Color(.systemGray3))
                         .frame(width: 8, height: 8)
-                    
+
                     Rectangle()
                         .fill(Color(.systemGray3))
                         .frame(width: 1, height: 32)
-                    
+
                     Rectangle()
                         .fill(.black)
                         .frame(width: 8, height: 8)
-                    
+
                 }
-                
+
                 VStack(alignment: .leading,spacing: 24) {
                     HStack {
                         Text("Current Location")
@@ -43,19 +43,19 @@ struct RideRequestView: View {
                             .foregroundColor(.gray)
 
                         Spacer()
-                        
+
                         Text("1:30 PM")
                             .font(.system(size: 14, weight: .semibold))
                             .foregroundColor(.gray)
                     }.padding(.bottom,10)
-                    
+
                     HStack {
                         Text("Starbucks Coffee")
                             .font(.system(size: 16,weight: .semibold))
-                            
+
 
                         Spacer()
-                        
+
                         Text("1:55 PM")
                             .font(.system(size: 14, weight: .semibold))
                             .foregroundColor(.gray)
@@ -82,20 +82,20 @@ struct RideRequestView: View {
                             Image(ride.imgName)
                                 .resizable()
                                 .scaledToFit()
-                            
-                            VStack(aligment:.leading,spacing: 4) {
+
+                            VStack(alignment:.leading, spacing: 4) {
                                 Text(ride.description)
                                     .font(.system(size: 14, weight: .semibold))
-                                    
-                                
+
+
                                 Text("$22.05")
                                     .font(.system(size: 14, weight: .semibold))
-                                    
-                            }.padding(8)
-                            
+
+                            }.padding()
+
                         }.frame(width: 112, height: 140)
                             .foregroundColor(ride == selectedRideType ? .white : .black)
-                            
+
                             .background(Color(ride == selectedRideType ? .systemBlue : .systemGroupedBackground))
                             .scaleEffect(ride == selectedRideType ? 1.2 : 1.0)
                             .cornerRadius(10)
