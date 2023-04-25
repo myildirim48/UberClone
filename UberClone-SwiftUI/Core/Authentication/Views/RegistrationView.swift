@@ -13,6 +13,7 @@ struct RegistrationView: View {
     @State private var email = ""
     @State private var password = ""
     @Environment(\.dismiss) private var dismiss
+    @EnvironmentObject var viewModel: AuthViewModel
     
     var body: some View {
         ZStack {
@@ -48,12 +49,11 @@ struct RegistrationView: View {
                     .padding(.top,64)
                     .padding(.leading)
                     
-                    
-                    
                     GeometryReader { proxy in
-                        
                         Button {
-                            
+                            viewModel.registerUser(withEmail: email,
+                                                   password: password,
+                                                   fullName: fullname)
                         } label: {
                             HStack {
                                 Text("SIGN UP")

@@ -33,6 +33,7 @@
 		74F2634229F6E9A40081D7DF /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 74F2634129F6E9A40081D7DF /* FirebaseFirestoreSwift */; };
 		74F2634429F6E9A40081D7DF /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 74F2634329F6E9A40081D7DF /* FirebaseStorage */; };
 		74F2634629F6EAE40081D7DF /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F2634529F6EAE40081D7DF /* AuthViewModel.swift */; };
+		74F2634829F7A6DE0081D7DF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F2634729F7A6DE0081D7DF /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		74F2633829F6E2420081D7DF /* CustomInputField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputField.swift; sourceTree = "<group>"; };
 		74F2633A29F6E81B0081D7DF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		74F2634529F6EAE40081D7DF /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		74F2634729F7A6DE0081D7DF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 				7420247029F3FE7500548565 /* MapViewState.swift */,
 				7420247529F4545D00548565 /* RideType.swift */,
 				74F2632C29F6A8A60081D7DF /* UberLocation.swift */,
+				74F2634729F7A6DE0081D7DF /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -345,6 +348,7 @@
 				74F2633629F6DABD0081D7DF /* RegistrationView.swift in Sources */,
 				74F2634629F6EAE40081D7DF /* AuthViewModel.swift in Sources */,
 				7420247429F434FC00548565 /* RideRequestView.swift in Sources */,
+				74F2634829F7A6DE0081D7DF /* User.swift in Sources */,
 				7420247129F3FE7500548565 /* MapViewState.swift in Sources */,
 				7420246129F31D4500548565 /* LocationManager.swift in Sources */,
 				74F2632F29F6C72C0081D7DF /* Color.swift in Sources */,

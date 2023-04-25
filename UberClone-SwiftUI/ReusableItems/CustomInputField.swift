@@ -30,10 +30,12 @@ struct CustomInputField: View {
                 }
                 
                     
+                GeometryReader { proxy in
+                    Rectangle()
+                        .foregroundColor(Color(.init(white: 1, alpha: 0.3)))
+                        .frame(width: proxy.size.width, height: 1)
+                }
                 
-                Rectangle()
-                    .foregroundColor(Color(.init(white: 1, alpha: 0.3)))
-                    .frame(width: .infinity, height: 1)
             }
             
 

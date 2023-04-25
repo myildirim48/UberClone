@@ -11,6 +11,7 @@ struct LoginView: View {
     
     @State var email = ""
     @State var password = ""
+    @EnvironmentObject var viewModel: AuthViewModel
     
     var body: some View {
         NavigationStack {
@@ -99,7 +100,7 @@ struct LoginView: View {
                         
                         
                         Button {
-                            
+                            viewModel.signIn(withEmail: email, password: password)
                         } label: {
                             HStack{
                                 Text("SIGN IN")
@@ -107,13 +108,12 @@ struct LoginView: View {
                                     
                                 Image(systemName: "arrow.right")
                                     .foregroundColor(.black)
-                            }
-                                .frame(width: proxy.size.width - 32, height: 50)
 
+                            }.frame(width: proxy.size.width * (0.9), height: 50)
                         }
                         .background(Color.white)
                         .cornerRadius(10)
-                        .offset(x: 20,y:80)
+                        .offset(x:20,y:40)
                         
                     }
              
