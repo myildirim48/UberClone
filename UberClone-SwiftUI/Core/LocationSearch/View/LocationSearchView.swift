@@ -10,8 +10,8 @@ import SwiftUI
 struct LocationSearchView: View {
     
     @State private var startLocation = ""
-    @Binding var mapState: MapViewState
     @EnvironmentObject var viewModel : LocationSearchViewModel
+    
     
     var body: some View {
         
@@ -53,19 +53,7 @@ struct LocationSearchView: View {
                 .padding(.vertical)
             
             //            list view
-            ScrollView {
-                VStack(alignment: .leading) {
-                    ForEach(viewModel.results, id : \.self) { result in
-                        LocationSearchResultCell(title: result.title, subTitle: result.subtitle)
-                            .onTapGesture {
-                                withAnimation(.spring()){
-                                    viewModel.selectLocation(result)
-                                    mapState = .locationSelected
-                                }
-                            }
-                    }
-                }
-            }
+            LocationSearchResultView(viewModel: viewModel, config: .ride )
             
         }
         .background(Color.theme.backgroundColor)
@@ -74,6 +62,6 @@ struct LocationSearchView: View {
 
 struct LocationSearchVI_ew_Previews: PreviewProvider {
     static var previews: some View {
-        LocationSearchView(mapState: .constant(.locationSelected))
+        LocationSearchView()
     }
 }

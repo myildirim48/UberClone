@@ -149,6 +149,7 @@ struct RideRequestView: View {
                         .frame(width: proxy.size.width - 32, height: 50)
                         .background(.blue)
                         .cornerRadius(10)
+                        .foregroundColor(.white)
                 }.offset(x:16)
             }
         }.background(Color.theme.backgroundColor)

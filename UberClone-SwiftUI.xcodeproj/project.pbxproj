@@ -37,6 +37,13 @@
 		74F2634D29F7B1EA0081D7DF /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F2634C29F7B1EA0081D7DF /* SideMenuView.swift */; };
 		74F2634F29F7F3890081D7DF /* SideMenuOptionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F2634E29F7F3890081D7DF /* SideMenuOptionViewModel.swift */; };
 		74F2635129F7F44F0081D7DF /* SideMenuOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F2635029F7F44F0081D7DF /* SideMenuOptionView.swift */; };
+		74F2635429F836360081D7DF /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F2635329F836360081D7DF /* SettingsView.swift */; };
+		74F2635929F8364F0081D7DF /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F2635829F8364F0081D7DF /* SettingsViewModel.swift */; };
+		74F2635B29F8386E0081D7DF /* SavedLocationRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F2635A29F8386E0081D7DF /* SavedLocationRowView.swift */; };
+		74F2635D29F839930081D7DF /* SettingRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F2635C29F839930081D7DF /* SettingRowView.swift */; };
+		74F2635F29F846BD0081D7DF /* SavedLocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F2635E29F846BD0081D7DF /* SavedLocationViewModel.swift */; };
+		74F2636129F849090081D7DF /* SavedLocationSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F2636029F849090081D7DF /* SavedLocationSearchView.swift */; };
+		74F2636329F8523E0081D7DF /* LocationSearchResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F2636229F8523E0081D7DF /* LocationSearchResultView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +74,13 @@
 		74F2634C29F7B1EA0081D7DF /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
 		74F2634E29F7F3890081D7DF /* SideMenuOptionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuOptionViewModel.swift; sourceTree = "<group>"; };
 		74F2635029F7F44F0081D7DF /* SideMenuOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuOptionView.swift; sourceTree = "<group>"; };
+		74F2635329F836360081D7DF /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		74F2635829F8364F0081D7DF /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		74F2635A29F8386E0081D7DF /* SavedLocationRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedLocationRowView.swift; sourceTree = "<group>"; };
+		74F2635C29F839930081D7DF /* SettingRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingRowView.swift; sourceTree = "<group>"; };
+		74F2635E29F846BD0081D7DF /* SavedLocationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedLocationViewModel.swift; sourceTree = "<group>"; };
+		74F2636029F849090081D7DF /* SavedLocationSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedLocationSearchView.swift; sourceTree = "<group>"; };
+		74F2636229F8523E0081D7DF /* LocationSearchResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchResultView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +160,7 @@
 		7420245829F31B1F00548565 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				74F2635229F8362E0081D7DF /* Settings */,
 				74F2634929F7B1C90081D7DF /* SideMenu */,
 				74F2633029F6DA8C0081D7DF /* Authentication */,
 				7420247229F434EF00548565 /* Trips */,
@@ -197,6 +212,7 @@
 				7420246629F3BAD000548565 /* LocationSearchActivationView.swift */,
 				7420246C29F3C1E700548565 /* LocationSearchResultCell.swift */,
 				74F2632829F5A44F0081D7DF /* LocationSearchView.swift */,
+				74F2636029F849090081D7DF /* SavedLocationSearchView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -263,6 +279,9 @@
 			isa = PBXGroup;
 			children = (
 				74F2633829F6E2420081D7DF /* CustomInputField.swift */,
+				74F2635A29F8386E0081D7DF /* SavedLocationRowView.swift */,
+				74F2635C29F839930081D7DF /* SettingRowView.swift */,
+				74F2636229F8523E0081D7DF /* LocationSearchResultView.swift */,
 			);
 			path = ReusableItems;
 			sourceTree = "<group>";
@@ -291,6 +310,32 @@
 				74F2634E29F7F3890081D7DF /* SideMenuOptionViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		74F2635229F8362E0081D7DF /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				74F2635629F836400081D7DF /* Viewmodel */,
+				74F2635529F8363C0081D7DF /* Views */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		74F2635529F8363C0081D7DF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				74F2635329F836360081D7DF /* SettingsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		74F2635629F836400081D7DF /* Viewmodel */ = {
+			isa = PBXGroup;
+			children = (
+				74F2635829F8364F0081D7DF /* SettingsViewModel.swift */,
+				74F2635E29F846BD0081D7DF /* SavedLocationViewModel.swift */,
+			);
+			path = Viewmodel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -373,6 +418,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74F2636329F8523E0081D7DF /* LocationSearchResultView.swift in Sources */,
 				7420246F29F3D16A00548565 /* LocationSearchViewModel.swift in Sources */,
 				74F2632929F5A44F0081D7DF /* LocationSearchView.swift in Sources */,
 				7420246729F3BAD000548565 /* LocationSearchActivationView.swift in Sources */,
@@ -382,20 +428,26 @@
 				74F2633629F6DABD0081D7DF /* RegistrationView.swift in Sources */,
 				74F2634629F6EAE40081D7DF /* AuthViewModel.swift in Sources */,
 				7420247429F434FC00548565 /* RideRequestView.swift in Sources */,
+				74F2635429F836360081D7DF /* SettingsView.swift in Sources */,
+				74F2636129F849090081D7DF /* SavedLocationSearchView.swift in Sources */,
+				74F2635929F8364F0081D7DF /* SettingsViewModel.swift in Sources */,
 				74F2634829F7A6DE0081D7DF /* User.swift in Sources */,
 				7420247129F3FE7500548565 /* MapViewState.swift in Sources */,
 				7420246129F31D4500548565 /* LocationManager.swift in Sources */,
 				74F2632F29F6C72C0081D7DF /* Color.swift in Sources */,
 				74F2635129F7F44F0081D7DF /* SideMenuOptionView.swift in Sources */,
 				7420244429F31AD500548565 /* UberClone_SwiftUIApp.swift in Sources */,
+				74F2635D29F839930081D7DF /* SettingRowView.swift in Sources */,
 				7420245F29F31C1000548565 /* UberMapViewRepresentable.swift in Sources */,
 				74F2632D29F6A8A60081D7DF /* UberLocation.swift in Sources */,
 				74F2634D29F7B1EA0081D7DF /* SideMenuView.swift in Sources */,
+				74F2635B29F8386E0081D7DF /* SavedLocationRowView.swift in Sources */,
 				7420245D29F31BEF00548565 /* HomeView.swift in Sources */,
 				7420246D29F3C1E700548565 /* LocationSearchResultCell.swift in Sources */,
 				74F2633429F6DAB00081D7DF /* LoginView.swift in Sources */,
 				74F2633929F6E2420081D7DF /* CustomInputField.swift in Sources */,
 				7420247629F4545D00548565 /* RideType.swift in Sources */,
+				74F2635F29F846BD0081D7DF /* SavedLocationViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
