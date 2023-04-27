@@ -24,12 +24,14 @@ struct UberClone_SwiftUIApp: App {
     
     @StateObject var locationViewModel = LocationSearchViewModel()
     @StateObject var authViewModel = AuthViewModel()
+    @StateObject var homeViewModel = HomeViewModel()
     
     var body: some Scene {
         WindowGroup {
             HomeView()
                 .environmentObject(locationViewModel)
                 .environmentObject(authViewModel)
+                .environmentObject(homeViewModel)
         }
     }
 }

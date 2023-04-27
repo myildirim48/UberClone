@@ -90,9 +90,7 @@ struct SettingsView: View {
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            SettingsView(user: User(fullName: "User Surname",
-                                    email: "name@example.com",
-                                    uid: "12342"))
+            SettingsView(user: dev.mockUser)
         }
     }
 }
