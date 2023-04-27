@@ -49,6 +49,8 @@
 		74F2636929F92C950081D7DF /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F2636829F92C950081D7DF /* HomeViewModel.swift */; };
 		74F2636B29F993410081D7DF /* DriverAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F2636A29F993410081D7DF /* DriverAnnotation.swift */; };
 		74F2636E29F99BBE0081D7DF /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F2636D29F99BBE0081D7DF /* UserService.swift */; };
+		74F2637029FA419B0081D7DF /* AcceptTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F2636F29FA419B0081D7DF /* AcceptTripView.swift */; };
+		74F2637229FA48BA0081D7DF /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F2637129FA48BA0081D7DF /* Trip.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -91,6 +93,8 @@
 		74F2636829F92C950081D7DF /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		74F2636A29F993410081D7DF /* DriverAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DriverAnnotation.swift; sourceTree = "<group>"; };
 		74F2636D29F99BBE0081D7DF /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		74F2636F29FA419B0081D7DF /* AcceptTripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptTripView.swift; sourceTree = "<group>"; };
+		74F2637129FA48BA0081D7DF /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +162,7 @@
 				74F2634729F7A6DE0081D7DF /* User.swift */,
 				74F2636429F8F1120081D7DF /* SavedLocation.swift */,
 				74F2636A29F993410081D7DF /* DriverAnnotation.swift */,
+				74F2637129FA48BA0081D7DF /* Trip.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -242,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				7420247329F434FC00548565 /* RideRequestView.swift */,
+				74F2636F29FA419B0081D7DF /* AcceptTripView.swift */,
 			);
 			path = Trips;
 			sourceTree = "<group>";
@@ -446,6 +452,8 @@
 				7420246F29F3D16A00548565 /* LocationSearchViewModel.swift in Sources */,
 				74F2632929F5A44F0081D7DF /* LocationSearchView.swift in Sources */,
 				7420246729F3BAD000548565 /* LocationSearchActivationView.swift in Sources */,
+				74F2637229FA48BA0081D7DF /* Trip.swift in Sources */,
+				74F2637029FA419B0081D7DF /* AcceptTripView.swift in Sources */,
 				74F2634F29F7F3890081D7DF /* SideMenuOptionViewModel.swift in Sources */,
 				7420246929F3BEFC00548565 /* MapViewActionButton.swift in Sources */,
 				74F2636529F8F1120081D7DF /* SavedLocation.swift in Sources */,

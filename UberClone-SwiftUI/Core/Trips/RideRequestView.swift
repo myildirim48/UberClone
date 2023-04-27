@@ -10,7 +10,7 @@ import SwiftUI
 struct RideRequestView: View {
     
     @State private var selectedRideType: RideType = .uberX
-    @EnvironmentObject var locationViewModel: LocationSearchViewModel
+    @EnvironmentObject var homeViewModel: HomeViewModel
     
     var body: some View {
         VStack {
@@ -45,13 +45,13 @@ struct RideRequestView: View {
 
                         Spacer()
 
-                        Text(locationViewModel.pickupTime ?? "")
+                        Text(homeViewModel.pickupTime ?? "")
                             .font(.system(size: 14, weight: .semibold))
                             .foregroundColor(.gray)
                     }.padding(.bottom,10)
 
                     HStack {
-                        if let location = locationViewModel.selectedUberLocation {
+                        if let location = homeViewModel.selectedUberLocation {
                             Text(location.title)
                                 .font(.system(size: 16,weight: .semibold))
                         }
@@ -59,7 +59,7 @@ struct RideRequestView: View {
 
                         Spacer()
 
-                        Text(locationViewModel.dropOffTime ?? "")
+                        Text(homeViewModel.dropOffTime ?? "")
                             .font(.system(size: 14, weight: .semibold))
                             .foregroundColor(.gray)
                     }
@@ -91,7 +91,7 @@ struct RideRequestView: View {
                                     .font(.system(size: 14, weight: .semibold))
 
 
-                                Text(locationViewModel.computeRidePrice(forType: ride).toCurrency())
+                                Text(homeViewModel.computeRidePrice(forType: ride).toCurrency())
                                     .font(.system(size: 14, weight: .semibold))
 
                             }.padding()
@@ -141,7 +141,7 @@ struct RideRequestView: View {
 //            Request ride button
             
                 Button {
-                    
+                    homeViewModel.requestTrip()
                 } label: {
                     GeometryReader { proxy in
                     Text("CONFIRM RIDE")
