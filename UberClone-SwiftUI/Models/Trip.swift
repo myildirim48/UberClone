@@ -6,9 +6,16 @@
 //
 
 import Firebase
+import FirebaseFirestoreSwift
 
-struct Trip:Identifiable,Codable {
-    let id: String
+enum TripSate: Int, Codable {
+    case requested
+    case rejected
+    case accepted
+}
+
+struct Trip: Identifiable, Codable {
+    @DocumentID var tripId: String?
     let passengerUid: String
     let driverUid: String
     let passengerName: String
@@ -21,5 +28,14 @@ struct Trip:Identifiable,Codable {
     let pickupLocation: GeoPoint
     let dropOffLocation: GeoPoint
     let tripCost: Double
+    
+    var distanceToPassanger : Double
+    var travelTimeToPassanger: Int
+    
+    var state: TripSate
+    
+    var id : String {
+        return tripId ?? ""
+    }
     
 }

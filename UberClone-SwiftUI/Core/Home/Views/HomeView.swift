@@ -11,7 +11,6 @@ struct HomeView: View {
     
     @State private var mapState = MapViewState.noInput
     @State private var showSideMenu = false
-//    @EnvironmentObject var locationViewModel : LocationSearchViewModel
     @EnvironmentObject var authViewModel : AuthViewModel
     @EnvironmentObject var homeViewModel : HomeViewModel
     
@@ -34,6 +33,7 @@ struct HomeView: View {
                     }
                     .onAppear {
                         showSideMenu = false
+                        
                     }
                 }
                 
@@ -72,7 +72,9 @@ extension HomeView{
             if mapState == .locationSelected || mapState == .polylineAdded{
                 RideRequestView()
                     .transition(.move(edge: .bottom))
-                    
+            }
+            if let trip = homeViewModel.trip {
+                AcceptTripView(trip: trip).transition(.move(edge: .bottom))
             }
         }
         .edgesIgnoringSafeArea(.bottom)

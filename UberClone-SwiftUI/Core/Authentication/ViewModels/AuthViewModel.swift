@@ -52,9 +52,10 @@ class AuthViewModel: ObservableObject {
                             coordinate: GeoPoint(latitude: location.latitude, longitude: location.longitude),
                             accountType: .driver)
 
-            self.currentUser = user
             guard let encodedUser = try? Firestore.Encoder().encode(user) else { return }
             Firestore.firestore().collection("users").document(firebaseUser.uid).setData(encodedUser)
+            
+            self.currentUser = user
         }
     }
     
@@ -62,6 +63,7 @@ class AuthViewModel: ObservableObject {
         do {
             try Auth.auth().signOut()
             self.userSession = nil
+            self.currentUser = nil
         }catch {
             print("DEBUG : Failed to sign out with error: \(error.localizedDescription)")
         }
@@ -71,6 +73,7 @@ class AuthViewModel: ObservableObject {
         service.$user
             .sink { user in
                 self.currentUser = user
+                print("DEBUG : Current User AuthView\(user?.fullName ?? "Empty")")
             }
             .store(in: &cancellable)
     }

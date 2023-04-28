@@ -51,6 +51,7 @@
 		74F2636E29F99BBE0081D7DF /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F2636D29F99BBE0081D7DF /* UserService.swift */; };
 		74F2637029FA419B0081D7DF /* AcceptTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F2636F29FA419B0081D7DF /* AcceptTripView.swift */; };
 		74F2637229FA48BA0081D7DF /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F2637129FA48BA0081D7DF /* Trip.swift */; };
+		74F2637429FA7C7C0081D7DF /* GeoPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F2637329FA7C7C0081D7DF /* GeoPoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -95,6 +96,7 @@
 		74F2636D29F99BBE0081D7DF /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		74F2636F29FA419B0081D7DF /* AcceptTripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptTripView.swift; sourceTree = "<group>"; };
 		74F2637129FA48BA0081D7DF /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		74F2637329FA7C7C0081D7DF /* GeoPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoPoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,6 +260,7 @@
 				74F2632A29F6A6E90081D7DF /* Double.swift */,
 				74F2632E29F6C72C0081D7DF /* Color.swift */,
 				74F2636629F923C60081D7DF /* DeveloperPreview.swift */,
+				74F2637329FA7C7C0081D7DF /* GeoPoint.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -459,6 +462,7 @@
 				74F2636529F8F1120081D7DF /* SavedLocation.swift in Sources */,
 				74F2632B29F6A6E90081D7DF /* Double.swift in Sources */,
 				74F2633629F6DABD0081D7DF /* RegistrationView.swift in Sources */,
+				74F2637429FA7C7C0081D7DF /* GeoPoint.swift in Sources */,
 				74F2634629F6EAE40081D7DF /* AuthViewModel.swift in Sources */,
 				7420247429F434FC00548565 /* RideRequestView.swift in Sources */,
 				74F2635429F836360081D7DF /* SettingsView.swift in Sources */,

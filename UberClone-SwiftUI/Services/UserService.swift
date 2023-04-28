@@ -6,14 +6,15 @@
 //
 
 import Firebase
+//import FirebaseFirestoreSwift
 
-class UserService:ObservableObject{
+class UserService: ObservableObject{
     
     static let shared = UserService()
     @Published var user: User?
     
-    
     init() {
+        print("DEBUG : Did init User Service")
         fetchUser()
     }
     
@@ -22,18 +23,10 @@ class UserService:ObservableObject{
             Firestore.firestore().collection("users").document(uid).getDocument { snapshot, _ in
                 guard let snapshot = snapshot else { return }
                 guard let user = try? snapshot.data(as: User.self) else { return }
-    
+                
+                print("DEBUG: Service currentUser \(user.fullName)")
                 self.user = user
             }
         }
-    
-//    static func fetchUser(completion:@escaping(User) -> Void) {
-//        guard let uid = Auth.auth().currentUser?.uid else { return }
-//        Firestore.firestore().collection("users").document(uid).getDocument { snapshot, _ in
-//            guard let snapshot = snapshot else { return }
-//            guard let user = try? snapshot.data(as: User.self) else { return }
-//
-//            completion(user)
-//        }
-//    }
+
 }
