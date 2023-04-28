@@ -60,6 +60,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		740F26A929FC2D8600073F6C /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		7420244029F31AD500548565 /* UberClone-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UberClone-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7420244329F31AD500548565 /* UberClone_SwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UberClone_SwiftUIApp.swift; sourceTree = "<group>"; };
 		7420244729F31AD500548565 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -127,6 +128,7 @@
 		7420243729F31AD500548565 = {
 			isa = PBXGroup;
 			children = (
+				740F26A929FC2D8600073F6C /* README.md */,
 				7420244229F31AD500548565 /* UberClone-SwiftUI */,
 				7420244129F31AD500548565 /* Products */,
 			);
