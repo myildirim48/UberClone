@@ -24,8 +24,10 @@ class HomeViewModel: NSObject,ObservableObject {
     @Published var pickupTime : String?
     @Published var dropOffTime : String?
     
-    
+    var currentUser: User?
+    var routeToPickupLocation: MKRoute?
     var userLocation: CLLocationCoordinate2D?
+    
     private let searchCompleter = MKLocalSearchCompleter()
     
     var queryFragment: String = "" {
@@ -36,7 +38,7 @@ class HomeViewModel: NSObject,ObservableObject {
     
     private let service = UserService.shared
     private var cancellables = Set<AnyCancellable>()
-    private var currentUser: User?
+    
     
     //MARK: -  Lifecycle
     override init() {
@@ -45,6 +47,58 @@ class HomeViewModel: NSObject,ObservableObject {
         
         searchCompleter.delegate = self
         searchCompleter.queryFragment = queryFragment
+    }
+    
+    //MARK: - Helpers
+    
+    var tripCancelledMessage: String {
+        guard let user = currentUser, let trip = trip else { return "" }
+        
+        if user.accountType == .passenger {
+            if trip.state == .driverCancelled {
+                return "Your driver cancelled this trip."
+            }else if trip.state == .passangerCancelled {
+                return "Your trip has been cancelled."
+            }
+        }else {
+            if trip.state == .driverCancelled{
+                return "Your trip has been cancelled."
+            }else if trip.state == .passangerCancelled {
+                return "The trip has been cancelled by the passenger."
+            }
+        }
+        
+        return ""
+    }
+    
+    func viewForState(_ state: MapViewState, user:User) -> some View {
+        switch state {
+        case .polylineAdded, .locationSelected:
+            return AnyView(RideRequestView())
+        case .tripRequested:
+            if user.accountType == .passenger {
+                return AnyView(TripLoadingView())
+            }else {
+                if let trip {
+                    return AnyView(AcceptTripView(trip: trip))
+                }
+            }
+        case .tripAccepted:
+            if user.accountType == .passenger {
+                return AnyView(TripAcceptedView())
+            }else {
+                if let trip {
+                    return AnyView(PickupPassangerView(trip: trip))
+                }
+            }
+        case .tripCancelledByPassanger, .tripCancelledByDriver:
+            return AnyView(TripCancelledView())
+        default:
+            break
+        }
+        
+        return AnyView(Text(""))
+        
     }
     
     //MARK: -  User Api
@@ -60,10 +114,36 @@ class HomeViewModel: NSObject,ObservableObject {
                     self.fetchDrivers()
                     self.addTripObserverForPassenger()
                 }else {
-                    self.fetchTrips()
+                    self.addTripObserverForDriver()
                 }
                 
             }.store(in: &cancellables)
+    }
+    
+    
+    private func updateTripState(state: TripSate){
+        guard let trip else { return }
+        
+        var data = ["state" : state.rawValue]
+        
+        if state == .accepted {
+            data["travelTimeToPassanger"] =  trip.travelTimeToPassanger
+        }
+        
+        Firestore.firestore().collection("trips").document(trip.id)
+            .updateData(data) { error in
+                if error == nil{
+                    print("DEBUG : Did update trip with data \(data)")
+                }
+            }
+    }
+    
+    func deleteTrip(){
+        guard let trip = trip else { return }
+        
+        Firestore.firestore().collection("trips").document(trip.id).delete { _ in
+            self.trip = nil
+        }
     }
 }
 //MARK: -  Passsanger API
@@ -79,7 +159,7 @@ extension HomeViewModel{
                         || change.type == .modified else { return }
                 
                 guard let trip = try? change.document.data(as: Trip.self) else { return }
-                print("DEBUG Updated trip state is \(trip.state)")
+                self.trip = trip
             }
     }
     
@@ -119,8 +199,8 @@ extension HomeViewModel{
                             pickupLocation: currentUser.coordinate,
                             dropOffLocation: dropOffGeoPoint,
                             tripCost: tripCost,
-                            distanceToPassanger: 1000,
-                            travelTimeToPassanger: 24,
+                            distanceToPassanger: 0,
+                            travelTimeToPassanger: 0,
                             state: .requested)
             
             guard let encodedTrip = try? Firestore.Encoder().encode(trip) else { return}
@@ -128,32 +208,58 @@ extension HomeViewModel{
                 print("DEBUG : Did upload trip to firestore")
             }
         }
+    }
     
+    func cancelTripAsPassanger() {
+        updateTripState(state: .passangerCancelled)
     }
 }
 
 //MARK: - Driver API
 extension HomeViewModel{
-    func fetchTrips(){
-        guard let currentUser else { return }
-        
+    
+    
+    func addTripObserverForDriver() {
+        guard let currentUser = currentUser, currentUser.accountType == .driver else { return }
         Firestore.firestore().collection("trips")
-            .whereField("driverUid", isEqualTo: currentUser.uid)
-            .getDocuments { snapshot, _ in
-                guard let documents = snapshot?.documents, let document = documents.first  else { return }
-                guard let trip = try? document.data(as: Trip.self) else { return }
+            .whereField("driverUid", isEqualTo: currentUser.uid).addSnapshotListener { snapshot, _ in
+                guard let change = snapshot?.documentChanges.first,
+                        change.type == .added
+                        || change.type == .modified else { return }
                 
+                guard let trip = try? change.document.data(as: Trip.self) else { return }
                 self.trip = trip
                 
                 self.getDestinationRoute(from: trip.driverLocation.toCoordinate(),
                                          to: trip.pickupLocation.toCoordinate()) { route in
                     
-                    
+                    self.routeToPickupLocation = route
                     self.trip?.travelTimeToPassanger = Int(route.expectedTravelTime / 60)
                     self.trip?.distanceToPassanger = route.distance
                 }
             }
     }
+    
+//    func fetchTrips(){
+//        guard let currentUser else { return }
+//
+//        Firestore.firestore().collection("trips")
+//            .whereField("driverUid", isEqualTo: currentUser.uid)
+//            .getDocuments { snapshot, _ in
+//                guard let documents = snapshot?.documents, let document = documents.first  else { return }
+//                guard let trip = try? document.data(as: Trip.self) else { return }
+//
+//                self.trip = trip
+//
+//                self.getDestinationRoute(from: trip.driverLocation.toCoordinate(),
+//                                         to: trip.pickupLocation.toCoordinate()) { route in
+//
+//
+//                    self.trip?.travelTimeToPassanger = Int(route.expectedTravelTime / 60)
+//                    self.trip?.distanceToPassanger = route.distance
+//                }
+//            }
+//    }
     
     func rejectTrip() {
         updateTripState(state: .rejected)
@@ -163,16 +269,10 @@ extension HomeViewModel{
         updateTripState(state: .accepted)
     }
     
-    private func updateTripState(state: TripSate){
-        guard let trip else { return }
-        Firestore.firestore().collection("trips").document(trip.id)
-            .updateData(["state": state.rawValue]) { error in
-                if error == nil{
-                    print("DEBUG : Did update trip with state")
-                }
-                
-            }
+    func cancelTripAsDriver(){
+        updateTripState(state: .driverCancelled)
     }
+
 }
 
 //MARK: - Location Search Helpers

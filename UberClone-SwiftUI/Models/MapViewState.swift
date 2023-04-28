@@ -11,4 +11,9 @@ enum MapViewState {
     case locationSelected
     case searchingForLocation
     case polylineAdded
+    case tripRequested
+    case tripAccepted
+    case tripRejected
+    case tripCancelledByPassanger
+    case tripCancelledByDriver
 }

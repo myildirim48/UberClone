@@ -12,6 +12,8 @@ enum TripSate: Int, Codable {
     case requested
     case rejected
     case accepted
+    case passangerCancelled
+    case driverCancelled
 }
 
 struct Trip: Identifiable, Codable {

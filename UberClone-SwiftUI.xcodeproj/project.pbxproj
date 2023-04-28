@@ -20,6 +20,7 @@
 		7420247129F3FE7500548565 /* MapViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7420247029F3FE7500548565 /* MapViewState.swift */; };
 		7420247429F434FC00548565 /* RideRequestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7420247329F434FC00548565 /* RideRequestView.swift */; };
 		7420247629F4545D00548565 /* RideType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7420247529F4545D00548565 /* RideType.swift */; };
+		74EC15F629FC027E002369B6 /* TripCancelledView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74EC15F529FC027E002369B6 /* TripCancelledView.swift */; };
 		74F2632929F5A44F0081D7DF /* LocationSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F2632829F5A44F0081D7DF /* LocationSearchView.swift */; };
 		74F2632B29F6A6E90081D7DF /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F2632A29F6A6E90081D7DF /* Double.swift */; };
 		74F2632D29F6A8A60081D7DF /* UberLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F2632C29F6A8A60081D7DF /* UberLocation.swift */; };
@@ -52,6 +53,10 @@
 		74F2637029FA419B0081D7DF /* AcceptTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F2636F29FA419B0081D7DF /* AcceptTripView.swift */; };
 		74F2637229FA48BA0081D7DF /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F2637129FA48BA0081D7DF /* Trip.swift */; };
 		74F2637429FA7C7C0081D7DF /* GeoPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F2637329FA7C7C0081D7DF /* GeoPoint.swift */; };
+		74F2637629FB94570081D7DF /* TripLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F2637529FB94570081D7DF /* TripLoadingView.swift */; };
+		74F2637829FB94C50081D7DF /* TripAcceptedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F2637729FB94C50081D7DF /* TripAcceptedView.swift */; };
+		74F2637A29FB99B70081D7DF /* Spinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F2637929FB99B70081D7DF /* Spinner.swift */; };
+		74F2637E29FBAE770081D7DF /* PickupPassangerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F2637D29FBAE770081D7DF /* PickupPassangerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -69,6 +74,7 @@
 		7420247029F3FE7500548565 /* MapViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewState.swift; sourceTree = "<group>"; };
 		7420247329F434FC00548565 /* RideRequestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideRequestView.swift; sourceTree = "<group>"; };
 		7420247529F4545D00548565 /* RideType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RideType.swift; sourceTree = "<group>"; };
+		74EC15F529FC027E002369B6 /* TripCancelledView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripCancelledView.swift; sourceTree = "<group>"; };
 		74F2632829F5A44F0081D7DF /* LocationSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationSearchView.swift; sourceTree = "<group>"; };
 		74F2632A29F6A6E90081D7DF /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
 		74F2632C29F6A8A60081D7DF /* UberLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UberLocation.swift; sourceTree = "<group>"; };
@@ -97,6 +103,10 @@
 		74F2636F29FA419B0081D7DF /* AcceptTripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcceptTripView.swift; sourceTree = "<group>"; };
 		74F2637129FA48BA0081D7DF /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		74F2637329FA7C7C0081D7DF /* GeoPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeoPoint.swift; sourceTree = "<group>"; };
+		74F2637529FB94570081D7DF /* TripLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripLoadingView.swift; sourceTree = "<group>"; };
+		74F2637729FB94C50081D7DF /* TripAcceptedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripAcceptedView.swift; sourceTree = "<group>"; };
+		74F2637929FB99B70081D7DF /* Spinner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spinner.swift; sourceTree = "<group>"; };
+		74F2637D29FBAE770081D7DF /* PickupPassangerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickupPassangerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,10 +258,19 @@
 		7420247229F434EF00548565 /* Trips */ = {
 			isa = PBXGroup;
 			children = (
-				7420247329F434FC00548565 /* RideRequestView.swift */,
-				74F2636F29FA419B0081D7DF /* AcceptTripView.swift */,
+				74EC15F429FC025F002369B6 /* Shared */,
+				74F2637C29FBAE2F0081D7DF /* Passangers */,
+				74F2637B29FBAE2C0081D7DF /* Drivers */,
 			);
 			path = Trips;
+			sourceTree = "<group>";
+		};
+		74EC15F429FC025F002369B6 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				74EC15F529FC027E002369B6 /* TripCancelledView.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		74F2632429F5A3650081D7DF /* Extensions */ = {
@@ -306,6 +325,7 @@
 				74F2635A29F8386E0081D7DF /* SavedLocationRowView.swift */,
 				74F2635C29F839930081D7DF /* SettingRowView.swift */,
 				74F2636229F8523E0081D7DF /* LocationSearchResultView.swift */,
+				74F2637929FB99B70081D7DF /* Spinner.swift */,
 			);
 			path = ReusableItems;
 			sourceTree = "<group>";
@@ -368,6 +388,25 @@
 				74F2636D29F99BBE0081D7DF /* UserService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		74F2637B29FBAE2C0081D7DF /* Drivers */ = {
+			isa = PBXGroup;
+			children = (
+				74F2636F29FA419B0081D7DF /* AcceptTripView.swift */,
+				74F2637D29FBAE770081D7DF /* PickupPassangerView.swift */,
+			);
+			path = Drivers;
+			sourceTree = "<group>";
+		};
+		74F2637C29FBAE2F0081D7DF /* Passangers */ = {
+			isa = PBXGroup;
+			children = (
+				7420247329F434FC00548565 /* RideRequestView.swift */,
+				74F2637529FB94570081D7DF /* TripLoadingView.swift */,
+				74F2637729FB94C50081D7DF /* TripAcceptedView.swift */,
+			);
+			path = Passangers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -462,24 +501,29 @@
 				74F2636529F8F1120081D7DF /* SavedLocation.swift in Sources */,
 				74F2632B29F6A6E90081D7DF /* Double.swift in Sources */,
 				74F2633629F6DABD0081D7DF /* RegistrationView.swift in Sources */,
+				74F2637A29FB99B70081D7DF /* Spinner.swift in Sources */,
 				74F2637429FA7C7C0081D7DF /* GeoPoint.swift in Sources */,
 				74F2634629F6EAE40081D7DF /* AuthViewModel.swift in Sources */,
 				7420247429F434FC00548565 /* RideRequestView.swift in Sources */,
 				74F2635429F836360081D7DF /* SettingsView.swift in Sources */,
 				74F2636129F849090081D7DF /* SavedLocationSearchView.swift in Sources */,
 				74F2635929F8364F0081D7DF /* SettingsViewModel.swift in Sources */,
+				74EC15F629FC027E002369B6 /* TripCancelledView.swift in Sources */,
 				74F2634829F7A6DE0081D7DF /* User.swift in Sources */,
 				7420247129F3FE7500548565 /* MapViewState.swift in Sources */,
+				74F2637829FB94C50081D7DF /* TripAcceptedView.swift in Sources */,
 				7420246129F31D4500548565 /* LocationManager.swift in Sources */,
 				74F2632F29F6C72C0081D7DF /* Color.swift in Sources */,
 				74F2635129F7F44F0081D7DF /* SideMenuOptionView.swift in Sources */,
 				74F2636B29F993410081D7DF /* DriverAnnotation.swift in Sources */,
 				74F2636E29F99BBE0081D7DF /* UserService.swift in Sources */,
 				7420244429F31AD500548565 /* UberClone_SwiftUIApp.swift in Sources */,
+				74F2637629FB94570081D7DF /* TripLoadingView.swift in Sources */,
 				74F2635D29F839930081D7DF /* SettingRowView.swift in Sources */,
 				7420245F29F31C1000548565 /* UberMapViewRepresentable.swift in Sources */,
 				74F2632D29F6A8A60081D7DF /* UberLocation.swift in Sources */,
 				74F2634D29F7B1EA0081D7DF /* SideMenuView.swift in Sources */,
+				74F2637E29FBAE770081D7DF /* PickupPassangerView.swift in Sources */,
 				74F2635B29F8386E0081D7DF /* SavedLocationRowView.swift in Sources */,
 				74F2636729F923C60081D7DF /* DeveloperPreview.swift in Sources */,
 				7420245D29F31BEF00548565 /* HomeView.swift in Sources */,
