@@ -14,10 +14,8 @@ class UserService: ObservableObject{
     @Published var user: User?
     
     init() {
-        print("DEBUG : Did init User Service")
         fetchUser()
     }
-    
         func fetchUser() {
             guard let uid = Auth.auth().currentUser?.uid else { return }
             Firestore.firestore().collection("users").document(uid).getDocument { snapshot, _ in
@@ -28,5 +26,4 @@ class UserService: ObservableObject{
                 self.user = user
             }
         }
-
 }

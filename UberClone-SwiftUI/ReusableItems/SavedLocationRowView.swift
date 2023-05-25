@@ -31,9 +31,3 @@ struct SavedLocationRowView: View {
         }
     }
 }
-
-//struct SavedLocationRowView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        SavedLocationRowView(viewModel: .home, user: <#User#>)
-//    }
-//}
